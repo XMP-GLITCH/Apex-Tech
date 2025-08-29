@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apex Tech – Smarter Tech Choices</title>
+  <meta name="description" content="Apex Tech – Free tools for smarter PC and phone choices. Custom PC builds on request." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    @media (min-width: 960px) {
+      #socials .hero-ctas {
+        justify-content: flex-start !important;
+      }
+    }
+    .btn-primary.hero-cta {
+      text-align: center;
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .btn-ghost.hero-build-btn {
+      text-align: center;
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .btn-ghost.hero-build-btn {
+      min-width: 160px;
+      max-width: 240px;
+    }
+    .btn-ghost.try-now-btn {
+      width: auto;
+      min-width: 60px;
+      max-width: 90px;
+    }
+    :root {
+      /* Brand palette */
+      --purple-500: #7C3AED; /* base */
+      --purple-600: #6D28D9;
+      --purple-400: #8B5CF6;
+      --accent-cyan: #22D3EE; /* subtle neon accent */
+      --bg-900: #0B0B0F; /* near-black */
+      --bg-800: #111318; /* panel */
+      --text-100: #F8F8FF; /* near-white */
+      --text-300: #C9C9D4; /* secondary */
+      --glass-bg: rgba(255, 255, 255, 0.06);
+      --glass-border: rgba(255, 255, 255, 0.14);
+      --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --shadow-soft: 0 8px 24px rgba(0,0,0,0.35);
+      --container: 1152px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text-100);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,0.23), transparent 60%),
+        radial-gradient(1000px 500px at -10% 20%, rgba(34,211,238,0.18), transparent 60%),
+        linear-gradient(180deg, #0B0B0F 0%, #09090C 100%);
+      background-attachment: fixed;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(12px);
+      background: linear-gradient(180deg, rgba(9,9,12,0.85), rgba(9,9,12,0.35));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+  .brand { display: flex; align-items: center; gap: 0; font-weight: 700; letter-spacing: 0.2px; }
+    .logo {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple-600), var(--purple-400));
+      box-shadow: 0 8px 20px rgba(124,58,237,0.35), inset 0 0 12px rgba(255,255,255,0.12);
+    }
+  .brand span { font-family: 'Sora', Inter, 'IBM Plex Sans', sans-serif; font-size: 1.18rem; }
+
+    .nav-links { display: none; gap: 16px; }
+    .nav-links a { opacity: 0.9; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple-600), var(--purple-400));
+      color: white; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 24px rgba(124,58,237,0.35);
+      font-weight: 600; letter-spacing: 0.2px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(124,58,237,0.45); }
+
+  .icon-btn { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(10px); box-shadow: var(--glass-shadow); }
+
+    /* Hero */
+    .hero { padding: 56px 0 24px; }
+    .hero-inner { display: grid; gap: 16px; justify-items: center; text-align: center; }
+    .eyebrow { color: var(--accent-cyan); font-weight: 600; letter-spacing: 0.4px; font-size: 0.85rem; }
+    h1 { font-family: 'Sora', Inter, 'IBM Plex Sans', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin: 6px 0 8px; }
+    .sub { color: var(--text-300); font-size: 1rem; max-width: 56ch; }
+    .hero-ctas { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
+
+    /* Tools */
+    .section { padding: 28px 0; }
+    .section h2 { font-family: 'Sora', Inter, 'IBM Plex Sans', sans-serif; font-size: clamp(1.4rem, 3.2vw, 2rem); margin: 0 0 14px; }
+    .muted { color: var(--text-300); }
+
+    .cards { display: grid; gap: 14px; grid-template-columns: 1fr; }
+    @media (min-width: 560px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .cards { grid-template-columns: repeat(4, 1fr); } }
+    
+      /* Mobile: 2x2 grid for cards */
+      @media (max-width: 700px) {
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+    .card {
+      position: relative; overflow: hidden; border-radius: var(--radius-xl);
+      padding: 18px; min-height: 168px;
+      background:
+        linear-gradient(180deg, rgba(124,58,237,0.14), rgba(124,58,237,0.06)),
+        var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(14px) saturate(130%);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover { transform: translateY(-2px); border-color: rgba(168,85,247,0.35); box-shadow: 0 16px 40px rgba(0,0,0,0.55); }
+
+    .card-icon { width: 44px; height: 44px; border-radius: 12px;
+      background: radial-gradient(80% 80% at 30% 20%, rgba(255,255,255,0.28), transparent 60%), linear-gradient(135deg, var(--purple-600), var(--purple-400));
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.16), 0 8px 20px rgba(124,58,237,0.35);
+      display: grid; place-items: center; font-size: 1.2rem; }
+
+    .card h3 { margin: 12px 0 6px; font-size: 1.05rem; font-weight: 700; font-family: 'Sora', Inter, 'IBM Plex Sans', sans-serif; }
+    .card p { margin: 0 0 14px; color: var(--text-300); font-size: 0.95rem; font-family: 'IBM Plex Sans', Inter, Arial, sans-serif; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem;
+      padding: 10px 12px; border-radius: 12px; border: 1px solid var(--glass-border);
+      background: rgba(255,255,255,0.04);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      text-align: left;
+  width: auto;
+  min-width: 72px;
+  max-width: 100px;
+    }
+      .btn-ghost {
+        display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem;
+        padding: 10px 12px; border-radius: 12px; border: 1px solid var(--glass-border);
+        background: rgba(255,255,255,0.04);
+        transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      }
+    .btn-ghost:hover { transform: translateY(-1px); border-color: rgba(168,85,247,0.35); background: rgba(255,255,255,0.06); }
+
+    @media (max-width: 700px) {
+      .nav-actions .btn-primary {
+        display: none !important;
+      }
+    }
+
+    /* Steps */
+    .steps { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    @media (min-width: 840px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+
+    .step { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 16px; backdrop-filter: blur(12px); box-shadow: var(--shadow-soft); }
+    .step b { color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+
+    /* Footer */
+    footer {
+      padding: 6px 0 10px;
+      color: var(--text-300);
+      font-size: 0.93rem;
+      background: rgba(124,58,237,0.10);
+      border-top: 2px solid;
+      border-image: linear-gradient(90deg, var(--purple-600), var(--accent-cyan)) 1;
+      box-shadow: 0 2px 24px rgba(124,58,237,0.10);
+      backdrop-filter: blur(12px) saturate(120%);
+      text-align: center;
+    }
+    footer .container {
+      display: block;
+      white-space: nowrap;
+    }
+
+    /* Motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      .btn-primary, .card, .btn-ghost { transition: none; }
+    }
+      @media (max-width: 700px) {
+        .section h2,
+        .section .muted {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+  <a class="brand" href="apex_tech_purple_glass_landing_starter_html_css_js.html">
+        <span style="width:76px;height:76px;display:inline-block;border-radius:50%;overflow:hidden;background:transparent;margin:0;padding:0;">
+          <img class="logo" src="Black and White Modern Linkedln Profile Picture_20250828_115015_0000.png" alt="Apex Tech Logo" loading="lazy" style="width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:none;background:transparent;margin:0;padding:0;display:block;" />
+        </span>
+        <span>Apex Tech</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#tools">Tools</a>
+        <a href="#build">Custom PCs</a>
+        <a href="#socials">Socials</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="icon-btn" href="https://instagram.com/apextech_cm" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="#fff" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="#fff"/></svg>
+        </a>
+  <a class="icon-btn" href="https://youtube.com/@apextech_cm" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="5" width="20" height="14" rx="4" stroke="#fff" stroke-width="2"/>
+            <polygon points="10,9 16,12 10,15" fill="#fff"/>
+          </svg>
+        </a>
+  <a class="icon-btn" href="https://tiktok.com/@apextech_cm" aria-label="TikTok">
+          <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M33.5 8c.2 3.7 3.2 6.2 6.5 6.5v5.5c-2.2.2-4.3-.3-6.2-1.3v14.7c0 6.2-5 11.3-11.3 11.3S11.2 40.6 11.2 34.4c0-6.2 5-11.3 11.3-11.3h2.7v5.5h-2.7c-3.2 0-5.8 2.6-5.8 5.8s2.6 5.8 5.8 5.8 5.8-2.6 5.8-5.8V8h5.5z" fill="#fff"/>
+          </svg>
+        </a>
+        <a class="btn-primary" href="https://wa.me/237677716908?text=Hi%20I%20want%20to%20start%20a%20PC%20build%20with%20Apex%20Tech">Start Your Build</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow">Free tools. Clean builds. Tech Advice</div>
+      <h1>Buy Smart. Build Smarter.</h1>
+      <p class="sub">Apex Tech helps you choose the right tech with free tools, accurate comparisons, and custom PC builds designed for your budget.</p>
+      <div class="hero-ctas">
+  <a class="btn-primary hero-cta" href="#tools">Explore Free Tools</a>
+  <a class="btn-ghost hero-build-btn" href="https://wa.me/237677716908?text=Hi%20I%20want%20to%20start%20a%20PC%20build%20with%20Apex%20Tech">Start Your Build</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools" class="section">
+    <div class="container">
+      <h2>Free Tools to Help You Choose Right</h2>
+      <p class="muted" style="margin-bottom:14px">Tap a tool to compare parts fast. No sign-up, no sress.</p>
+
+      <div class="cards">
+        <!-- CPU Comparison Tool -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🖥️</div>
+          <h3>CPU Comparison Tool</h3>
+          <p>Compare processors side by side and pick the perfect match for your workflow.</p>
+          <a class="btn-ghost try-now-btn" href="https://versus.com/en/cpu" target="_blank" rel="noopener">Try Now</a>
+        </article>
+
+        <!-- GPU Comparison Tool -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎮</div>
+          <h3>GPU Comparison Tool</h3>
+          <p>See real performance differences so you never overpay for frames.</p>
+          <a class="btn-ghost try-now-btn" href="https://technical.city/en/video" target="_blank" rel="noopener">Try Now</a>
+        </article>
+
+        <!-- GPU Tier List -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📊</div>
+          <h3>GPU Tier List</h3>
+          <p>From entry to pro. Quickly find where each card sits before you buy.</p>
+          <a class="btn-ghost" href="gpu-tier-list.html" target="_blank" rel="noopener">View List</a>
+        </article>
+
+        <!-- PSU Tier List -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🔌</div>
+          <h3>PSU Tier List</h3>
+          <p>Only stable power. Choose reliable PSUs that keep your build safe.</p>
+          <a class="btn-ghost" href="psu-tier-list.html" target="_blank" rel="noopener">View List</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="build" class="section">
+    <div class="container">
+      <h2>Your Build in 3 Steps</h2>
+      <div class="steps">
+        <div class="step"><b>1.</b> Tell us your goals and budget. Gaming, editing, school, or a clean daily driver.</div>
+        <div class="step"><b>2.</b> We design the best parts list for price, performance, and future upgrades.</div>
+        <div class="step"><b>3.</b> You get a custom PC, tested and ready. Simple handoff and support.</div>
+      </div>
+      <div class="hero-ctas" style="margin-top:16px">
+        <a class="btn-primary" href="https://wa.me/237677716908?text=Hi%20I%20want%20to%20start%20a%20PC%20build%20with%20Apex%20Tech" target="_blank" rel="noopener">Request a Build</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials -->
+  <section id="socials" class="section">
+    <div class="container">
+      <h2>Join Apex Tech Online</h2>
+      <p class="muted" style="margin-bottom:10px">More tips, tutorials, and clean setups.</p>
+      <div class="hero-ctas">
+        <a class="icon-btn" href="https://instagram.com/apextech_cm" target="_blank" rel="noopener" aria-label="Instagram" style="margin-right:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="#fff" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1.5" fill="#fff"/>
+          </svg>
+        </a>
+    <a class="icon-btn" href="https://youtube.com/@apextech_cm" target="_blank" rel="noopener" aria-label="YouTube" style="margin-right:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="5" width="20" height="14" rx="4" stroke="#fff" stroke-width="2"/>
+            <polygon points="10,9 16,12 10,15" fill="#fff"/>
+          </svg>
+        </a>
+  <a class="icon-btn" href="https://tiktok.com/@apextech_cm" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M33.5 8c.2 3.7 3.2 6.2 6.5 6.5v5.5c-2.2.2-4.3-.3-6.2-1.3v14.7c0 6.2-5 11.3-11.3 11.3S11.2 40.6 11.2 34.4c0-6.2 5-11.3 11.3-11.3h2.7v5.5h-2.7c-3.2 0-5.8 2.6-5.8 5.8s2.6 5.8 5.8 5.8 5.8-2.6 5.8-5.8V8h5.5z" fill="#fff"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Apex Tech. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // tiny UX niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        // Only run smooth scroll for internal anchors, not external links
+        const isInternal = (
+          id.length > 1 &&
+          a.getAttribute('href').startsWith('#') &&
+          (!a.hasAttribute('target') || a.getAttribute('target') === '_self') &&
+          (!a.hasAttribute('rel') || (a.getAttribute('rel') !== 'noopener' && a.getAttribute('rel') !== 'noreferrer'))
+        );
+        if (isInternal) {
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  </script>
+  <script src="" defer></script>
+  </script>
+</body>
+</html>
